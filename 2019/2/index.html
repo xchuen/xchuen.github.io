@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="XChuen">
+  
+  
+  
+  <link rel="prev" href="https://example.com/2019/1/" />
+  
+  <link rel="canonical" href="https://example.com/2019/2/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           初识Git--最先进的分布式版本控制系统(一) | XChuen&#39;S Blog
+       
+  </title>
+  <meta name="title" content="初识Git--最先进的分布式版本控制系统(一) | XChuen&#39;S Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/example.com"
+    },
+    "articleSection" : "posts",
+    "name" : "初识Git--最先进的分布式版本控制系统(一)",
+    "headline" : "初识Git--最先进的分布式版本控制系统(一)",
+    "description" : "学习Git的起因  个人想深入地系统地学习Git,主要原因并不是追求分布式版本控制,而是在我的博客部署和备份时因为不熟悉Git遇到了很多问题,需要用到的东西就系统地学是我多年来的习惯,暂不咎其利弊,这种方式让我在学习道路上成长了不少,我觉得并不是不可行的\n 以下就是我的学习过程和其中一些个人的理解\n 初识\u0026mdash;最先进的分布式版本控制系统  Git是目前世界上最先进的分布式版本控制系统(没有之一),而版本控制系统就是你发布软件新版本时可以吃的后悔药,至于分布式我的理解还比较浅,只知道分布式相比集中式更加便捷\n 从手动管理多个“版本”到版本控制,几乎是质的改变\n我个人浅显的理解  我们可以把版本控制系统比作一条流水线\n 工作区就是一个生产车间,暂存区就是一辆车,版本库就是一个贮藏仓库\n一切的开始\u0026mdash;创建新的版本库  Git操作的对象是版本库,所以一切的前提都是你要有一个版本库,那么如何新建一个版本库呢?\n 进入你想要创建版本库的目录执行以下命令,就在该目录下新建了一个版本库\n$ git init  当然,在你不想使用的时候可以删除此版本库\n 你只需要在版本库的根目录下执行这条命令即可\n$ rm -rf .git  即删除版本库根目录下的.git\/目录即可\nGit最基本的操作\u0026mdash;add和commit  git add   生产车间生产出一批新产品后,需要将这些产品放入运输车,才能送到仓库,而这里产品从车间到运输车的过程就是git add\n$ git add \u0026lt;path\u0026gt;  通常是通过 git add \u0026lt;path\u0026gt;的形式把添加到索引库中,可以是文件也可以是目录\n Git不仅能判断出中修改(不包括已删除)的文件,还能判断出新添的文件,并把它们的信息添加到索引库中\n 还有一些git add命令常用的参数\n$ git add . #将所有修改添加到暂存区 $ git add -u #只添加暂存区已有的文件(包括删除操作)但不添加新增的文件 $ git add -A $ git add -all #这两条命令等同于git add .",
+    "inLanguage" : "zh-CN",
+    "author" : "XChuen",
+    "creator" : "XChuen",
+    "publisher": "XChuen",
+    "accountablePerson" : "XChuen",
+    "copyrightHolder" : "XChuen",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-08-01 00:27:23 \u002b0000 UTC",
+    "dateModified" : "2019-08-01 00:27:23 \u002b0000 UTC",
+    "url" : "https:\/\/example.com\/2019\/2\/",
+    "wordCount" : "94",
+    "keywords" : [ "git","自学", "XChuen\u0027S Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">XChuen&#39;S Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/about/" title="">关于</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">XChuen&#39;S Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/about/" title="">关于</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">初识Git--最先进的分布式版本控制系统(一)</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://example.com" rel="author">XChuen</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-08-01 itemprop="datePublished">August 1, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://example.com/categories/%E5%AD%A6%E4%B9%A0/"> 学习 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="https://i.loli.net/2019/08/01/5d428c8e796ab14725.jpeg" alt=""></p>
+<h3 id="学习git的起因">学习Git的起因</h3>
+<p> 个人想深入地系统地学习Git,主要原因并不是追求分布式版本控制,而是在我的博客部署和备份时因为不熟悉Git遇到了很多问题,需要用到的东西就系统地学是我多年来的习惯,暂不咎其利弊,这种方式让我在学习道路上成长了不少,我觉得并不是不可行的</p>
+<p> 以下就是我的学习过程和其中一些个人的理解</p>
+<hr>
+<h3 id="初识---最先进的分布式版本控制系统">初识&mdash;最先进的分布式版本控制系统</h3>
+<p> Git是目前世界上最先进的分布式版本控制系统(没有之一),而版本控制系统就是你发布软件新版本时可以吃的后悔药,至于分布式我的理解还比较浅,只知道分布式相比集中式更加便捷</p>
+<p> 从手动管理多个“版本”到版本控制,几乎是质的改变</p>
+<h3 id="我个人浅显的理解">我个人浅显的理解</h3>
+<p> 我们可以把版本控制系统比作一条流水线</p>
+<p><img src="https://i.loli.net/2019/08/01/5d42476f1be1164593.jpg" alt=""></p>
+<p> 工作区就是一个生产车间,暂存区就是一辆车,版本库就是一个贮藏仓库</p>
+<h3 id="一切的开始---创建新的版本库">一切的开始&mdash;创建新的版本库</h3>
+<p> Git操作的对象是版本库,所以一切的前提都是你要有一个版本库,那么如何新建一个版本库呢?</p>
+<p> 进入你想要创建版本库的目录执行以下命令,就在该目录下新建了一个版本库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git init
+</code></pre></div><p> 当然,在你不想使用的时候可以删除此版本库</p>
+<p> 你只需要在<code>版本库的根目录</code>下执行这条命令即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ rm -rf .git
+</code></pre></div><p> 即删除版本库根目录下的.git/目录即可</p>
+<h3 id="git最基本的操作---add和commit">Git最基本的操作&mdash;add和commit</h3>
+<ul>
+<li><strong>git add</strong></li>
+</ul>
+<p> 生产车间生产出一批新产品后,需要将这些产品放入运输车,才能送到仓库,而这里产品从车间到运输车的过程就是git add</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git add &lt;path&gt;
+</code></pre></div><p> 通常是通过 <code>git add &lt;path&gt;</code>的形式把<!-- raw HTML omitted -->添加到索引库中,<!-- raw HTML omitted -->可以是文件也可以是目录</p>
+<p> Git不仅能判断出<!-- raw HTML omitted -->中修改(不包括已删除)的文件,还能判断出新添的文件,并把它们的信息添加到索引库中</p>
+<p> 还有一些<code>git add</code>命令常用的参数</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git add .
+<span style="color:#75715e">#将所有修改添加到暂存区</span>
+$ git add -u
+<span style="color:#75715e">#只添加暂存区已有的文件(包括删除操作)但不添加新增的文件</span>
+$ git add -A
+$ git add -all
+<span style="color:#75715e">#这两条命令等同于git add .</span>
+$ git add -f &lt;fileName&gt;
+<span style="color:#75715e">#强制添加某个文件,不管.gitignore是否包含此文件</span>
+$ git add -p
+<span style="color:#75715e">#进入交互模式,指定哪些修改需要添加到暂存区</span>
+</code></pre></div><ul>
+<li><strong>git commit</strong></li>
+</ul>
+<p> 产品装到运输车以后,需要运送到贮藏仓库,每运一次都会在仓库的记录表上添加一行,这个过程就是git commit</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git commit -m <span style="color:#e6db74">&#34;提交信息&#34;</span>
+<span style="color:#75715e">#直接输入提交信息,而不调用vim编辑器</span>
+$ git commit -a -m <span style="color:#e6db74">&#34;提交信息&#34;</span>
+<span style="color:#75715e">#提交所有修改或删除的文件(包括不在暂存区的文件)</span>
+$ git commit --amend
+<span style="color:#75715e">#把文件追加到上次提交的内容里</span>
+</code></pre></div><hr>
+<!-- raw HTML omitted -->
+<p> 至此,应该会对Git和分布式版本管理有初步的了解,并且可以在日常工作中简单使用Git了</p>
+<p>  **未完待续~~**</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>XChuen </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://example.com/2019/2/>https://example.com/2019/2/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://example.com/tags/git/">
+                    #git</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/%E8%87%AA%E5%AD%A6/">
+                    #自学</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://example.com">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://example.com/2019/1/" class="prev" rel="prev" title="Termux下搭建Hexo博客部署到GithubPages并绑定域名"><i class="iconfont icon-left"></i>&nbsp;Termux下搭建Hexo博客部署到GithubPages并绑定域名</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://example.com">XChuen</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

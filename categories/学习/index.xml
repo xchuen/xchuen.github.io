@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>学习 on XChuen&#39;S Blog</title>
+    <link>https://example.com/categories/%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 学习 on XChuen&#39;S Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 01 Aug 2019 00:27:23 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>初识Git--最先进的分布式版本控制系统(一)</title>
+      <link>https://example.com/2019/2/</link>
+      <pubDate>Thu, 01 Aug 2019 00:27:23 +0000</pubDate>
+      
+      <guid>https://example.com/2019/2/</guid>
+      <description>学习Git的起因  个人想深入地系统地学习Git,主要原因并不是追求分布式版本控制,而是在我的博客部署和备份时因为不熟悉Git遇到了很多问题,需要用到的东西就系统地学是我多年来的习惯,暂不咎其利弊,这种方式让我在学习道路上成长了不少,我觉得并不是不可行的
+ 以下就是我的学习过程和其中一些个人的理解
+ 初识&amp;mdash;最先进的分布式版本控制系统  Git是目前世界上最先进的分布式版本控制系统(没有之一),而版本控制系统就是你发布软件新版本时可以吃的后悔药,至于分布式我的理解还比较浅,只知道分布式相比集中式更加便捷
+ 从手动管理多个“版本”到版本控制,几乎是质的改变
+我个人浅显的理解  我们可以把版本控制系统比作一条流水线
+ 工作区就是一个生产车间,暂存区就是一辆车,版本库就是一个贮藏仓库
+一切的开始&amp;mdash;创建新的版本库  Git操作的对象是版本库,所以一切的前提都是你要有一个版本库,那么如何新建一个版本库呢?
+ 进入你想要创建版本库的目录执行以下命令,就在该目录下新建了一个版本库
+$ git init  当然,在你不想使用的时候可以删除此版本库
+ 你只需要在版本库的根目录下执行这条命令即可
+$ rm -rf .git  即删除版本库根目录下的.git/目录即可
+Git最基本的操作&amp;mdash;add和commit  git add   生产车间生产出一批新产品后,需要将这些产品放入运输车,才能送到仓库,而这里产品从车间到运输车的过程就是git add
+$ git add &amp;lt;path&amp;gt;  通常是通过 git add &amp;lt;path&amp;gt;的形式把添加到索引库中,可以是文件也可以是目录
+ Git不仅能判断出中修改(不包括已删除)的文件,还能判断出新添的文件,并把它们的信息添加到索引库中
+ 还有一些git add命令常用的参数
+$ git add . #将所有修改添加到暂存区 $ git add -u #只添加暂存区已有的文件(包括删除操作)但不添加新增的文件 $ git add -A $ git add -all #这两条命令等同于git add .</description>
+    </item>
+    
+  </channel>
+</rss>

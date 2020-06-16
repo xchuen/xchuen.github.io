@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Termux on XChuen&#39;S Blog</title>
+    <link>https://example.com/tags/termux/</link>
+    <description>Recent content in Termux on XChuen&#39;S Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 31 Jul 2019 11:42:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/termux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Termux下搭建Hexo博客部署到GithubPages并绑定域名</title>
+      <link>https://example.com/2019/1/</link>
+      <pubDate>Wed, 31 Jul 2019 11:42:15 +0000</pubDate>
+      
+      <guid>https://example.com/2019/1/</guid>
+      <description>准备工作  下载并安装Termux   可以去Termux官网或者GooglePlay链接或者酷安链接下载(建议下载官网或play版本,酷安的版本较旧),联网后打开Termux会自动下载并安装核心运行环境(此过程需要科学上网！！！没有梯子的话可以在TankeCloud官网注册免费使用三天),请耐心等待
+ 更新软件源及安装所需的软件包  $ pkg update $ pkg install git openssh nodejs  安装hexo  $ npm install hexo-cli -g  一个GitHub账号   没有可以去注册,新建一个名为 你的Github用户名.github.io 的repo
+ 购买域名(选做)   博主是在在腾讯云购买的域名,在其他网站购买的域名操作和腾讯云类似,这里就只以腾讯云为例说明,购买域名之后,腾讯云提供免费的域名解析服务(没有兴趣绑定个人域名的机油可以省下这笔钱,忽略这部分内容即可)
+搭建博客框架  在你希望的目录下创建博客站点目录(以根目录下创建为例)  $ mkdir -p ~/blog  初始化博客站点目录  $ hexo init ~/blog $ cd ~/blog $ npm install  这时你的博客框架就已经搭建好了
+ 在本地预览初步搭建完成的Hexo博客框架  $ hexo clean $ hexo generate $ hexo server  执行完毕后你就可以在浏览器中输入localhost:4000预览你的博客了</description>
+    </item>
+    
+  </channel>
+</rss>

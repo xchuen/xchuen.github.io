@@ -1,0 +1,30 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XChuen&#39;S Blog on XChuen&#39;S Blog</title>
+    <link>https://example.com/</link>
+    <description>Recent content in XChuen&#39;S Blog on XChuen&#39;S Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 01 Aug 2019 00:27:23 +0000</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Posts</title>
+      <link>https://example.com/posts/</link>
+      <pubDate>Thu, 01 Aug 2019 00:27:23 +0000</pubDate>
+      
+      <guid>https://example.com/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Abouts</title>
+      <link>https://example.com/about/</link>
+      <pubDate>Wed, 31 Jul 2019 12:03:20 +0000</pubDate>
+      
+      <guid>https://example.com/about/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

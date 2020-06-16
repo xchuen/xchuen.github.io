@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="XChuen">
+  
+  
+  
+  
+  <link rel="next" href="https://example.com/2019/2/" />
+  <link rel="canonical" href="https://example.com/2019/1/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Termux下搭建Hexo博客部署到GithubPages并绑定域名 | XChuen&#39;S Blog
+       
+  </title>
+  <meta name="title" content="Termux下搭建Hexo博客部署到GithubPages并绑定域名 | XChuen&#39;S Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/example.com"
+    },
+    "articleSection" : "posts",
+    "name" : "Termux下搭建Hexo博客部署到GithubPages并绑定域名",
+    "headline" : "Termux下搭建Hexo博客部署到GithubPages并绑定域名",
+    "description" : "准备工作  下载并安装Termux   可以去Termux官网或者GooglePlay链接或者酷安链接下载(建议下载官网或play版本,酷安的版本较旧),联网后打开Termux会自动下载并安装核心运行环境(此过程需要科学上网！！！没有梯子的话可以在TankeCloud官网注册免费使用三天),请耐心等待\n 更新软件源及安装所需的软件包  $ pkg update $ pkg install git openssh nodejs  安装hexo  $ npm install hexo-cli -g  一个GitHub账号   没有可以去注册,新建一个名为 你的Github用户名.github.io 的repo\n 购买域名(选做)   博主是在在腾讯云购买的域名,在其他网站购买的域名操作和腾讯云类似,这里就只以腾讯云为例说明,购买域名之后,腾讯云提供免费的域名解析服务(没有兴趣绑定个人域名的机油可以省下这笔钱,忽略这部分内容即可)\n搭建博客框架  在你希望的目录下创建博客站点目录(以根目录下创建为例)  $ mkdir -p ~\/blog  初始化博客站点目录  $ hexo init ~\/blog $ cd ~\/blog $ npm install  这时你的博客框架就已经搭建好了\n 在本地预览初步搭建完成的Hexo博客框架  $ hexo clean $ hexo generate $ hexo server  执行完毕后你就可以在浏览器中输入localhost:4000预览你的博客了",
+    "inLanguage" : "zh-CN",
+    "author" : "XChuen",
+    "creator" : "XChuen",
+    "publisher": "XChuen",
+    "accountablePerson" : "XChuen",
+    "copyrightHolder" : "XChuen",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-07-31 11:42:15 \u002b0000 UTC",
+    "dateModified" : "2019-07-31 11:42:15 \u002b0000 UTC",
+    "url" : "https:\/\/example.com\/2019\/1\/",
+    "wordCount" : "145",
+    "keywords" : [ "Termux","Hexo","github", "XChuen\u0027S Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">XChuen&#39;S Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/about/" title="">关于</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">XChuen&#39;S Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/about/" title="">关于</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Termux下搭建Hexo博客部署到GithubPages并绑定域名</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://example.com" rel="author">XChuen</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-07-31 itemprop="datePublished">July 31, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://example.com/categories/%E6%8A%98%E8%85%BE/"> 折腾 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="https://i.loli.net/2019/07/31/5d4153b4d9d2f37392.png" alt=""></p>
+<h3 id="准备工作">准备工作</h3>
+<ul>
+<li>下载并安装Termux</li>
+</ul>
+<p> 可以去<a href="https://termux.com/">Termux官网</a>或者<a href="https://play.google.com/store/apps/details?id=com.termux">GooglePlay链接</a>或者<a href="https://www.coolapk.com/apk/com.termux">酷安链接</a>下载(建议下载官网或play版本,酷安的版本较旧),联网后打开Termux会自动下载并安装核心运行环境(此过程需要科学上网！！！没有梯子的话可以在<a href="https://www.tankecloud.com/">TankeCloud官网</a>注册免费使用三天),请耐心等待</p>
+<ul>
+<li>更新软件源及安装所需的软件包</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ pkg update
+$ pkg install git openssh nodejs
+</code></pre></div><ul>
+<li>安装hexo</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ npm install hexo-cli -g
+</code></pre></div><ul>
+<li>一个GitHub账号</li>
+</ul>
+<p> 没有可以去<a href="https://github.com/join?source=header-home">注册</a>,新建一个名为 <code>你的Github用户名.github.io</code> 的repo</p>
+<ul>
+<li>购买域名(选做)</li>
+</ul>
+<p> 博主是在在腾讯云购买的域名,在其他网站购买的域名操作和腾讯云类似,这里就只以腾讯云为例说明,购买域名之后,腾讯云提供免费的域名解析服务(没有兴趣绑定个人域名的机油可以省下这笔钱,忽略这部分内容即可)</p>
+<h3 id="搭建博客框架">搭建博客框架</h3>
+<ul>
+<li>在你希望的目录下创建博客站点目录(以根目录下创建为例)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ mkdir -p ~/blog
+</code></pre></div><ul>
+<li>初始化博客站点目录</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ hexo init ~/blog
+$ cd ~/blog
+$ npm install
+</code></pre></div><p> 这时你的博客框架就已经搭建好了</p>
+<ul>
+<li>在本地预览初步搭建完成的Hexo博客框架</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ hexo clean
+$ hexo generate
+$ hexo server
+</code></pre></div><p> 执行完毕后你就可以在浏览器中输入localhost:4000预览你的博客了</p>
+<h3 id="将博客部署到github">将博客部署到Github</h3>
+<ul>
+<li>首先在站点目录安装插件</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ npm install hexo-deployer-git --save
+</code></pre></div><ul>
+<li>在站点配置文件_config.yml的Deployment字段处添加并修改</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">deploy</span>:
+  <span style="color:#66d9ef">type</span>: git
+  <span style="color:#66d9ef">repo</span>: git@github.com:username/username.github.io.git
+  <span style="color:#66d9ef">branch</span>: master
+</code></pre></div><p> 特别需要注意的是 <strong>①配置文件是yml格式需要遵循yaml语法,冒号后必须有一个空格</strong>  <strong>②repo后的username全部换成你的Github用户名</strong>  <strong>③第一行顶格,后面每一行都缩进2个空格</strong></p>
+<ul>
+<li>为Github账号创建登录验证所需的ssh密钥对</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config --global user.name 你的GitHub用户名
+$ git config --global user.email 你的GitHub邮箱
+$ ssh-keygen -t rsa -C 你的GitHub邮箱
+</code></pre></div><p> 这时在~/.ssh目录下已经生成了id_rsa(私钥文件)和id_rsa.pub(公钥文件)</p>
+<ul>
+<li>将公钥文件关联到Github</li>
+</ul>
+<p> 复制~/.ssh/id_rsa.pub文件的全部内容,在Github中 <code>点击头像旁小三角形→设置→SSH和GPG密钥</code> ,将内容粘贴到大框里,title是你随便给这个公钥起的名字</p>
+<p><img src="https://i.loli.net/2019/07/31/5d41548dc7ba033016.png" alt=""></p>
+<ul>
+<li>添加本地私钥文件</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd ~/.ssh
+$ eval <span style="color:#e6db74">`</span>ssh-agent -s<span style="color:#e6db74">`</span>
+$ ssh-add id_rsa
+</code></pre></div><p> 此时你的博客已经与GitHubPages建立好了联系</p>
+<h3 id="日常使用博客">日常使用博客</h3>
+<ul>
+<li>写博客</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ hexo new 文章的名字
+</code></pre></div><p> 此时会在~/blog/source/_post目录下生成一个 <code>文章名字.md</code>的博客文件 ,然后使用vim或其它编辑器对你的文章做修改</p>
+<ul>
+<li>删博客</li>
+</ul>
+<p> 删除~/blog/source/_post目录下对应的博客文件就OK了</p>
+<ul>
+<li>把博客同步到GithubPages</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ hexo clean
+$ hexo deploy -g
+</code></pre></div><p> 这时你使用浏览器访问 <code>你的用户名.github.io</code> ,就会发现你在本地写的博客已经同步到GithubPages了</p>
+<h3 id="绑定个人域名">绑定个人域名</h3>
+<p> 使用GithubPages的二级域名总是让人有种寄人篱下的不适感,所以这步就简单说明一下绑定个人域名的过程</p>
+<ul>
+<li>
+<p>使用腾讯云提供的免费解析服务解析你购买的域名</p>
+</li>
+<li>
+<p>添加CNAME</p>
+</li>
+</ul>
+<p> 在~/blog/source目录下新建名为CNAME的文件(这个文件是没有扩展名的),使用vim或其它编辑器在里面添加内容:你需要绑定的域名,然后使用前文提到的方法把博客同步到GithubPages</p>
+<ul>
+<li>添加解析记录</li>
+</ul>
+<p> 添加解析记录 记录类型CNAME 主机记录@ 记录值填 <code>你的Github用户名.github.io</code>  点击保存即可</p>
+<p><img src="https://i.loli.net/2019/07/31/5d41550c6343a99513.jpg" alt=""></p>
+<ul>
+<li>使用个人域名访问博客</li>
+</ul>
+<p> 现在在浏览器输入你的个人域名就能直接访问你搭建的博客了</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>XChuen </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://example.com/2019/1/>https://example.com/2019/1/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://example.com/tags/termux/">
+                    #Termux</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/hexo/">
+                    #Hexo</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/github/">
+                    #github</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://example.com">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+        <a href="https://example.com/2019/2/" class="next" rel="next" title="初识Git--最先进的分布式版本控制系统(一)">初识Git--最先进的分布式版本控制系统(一)&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://example.com">XChuen</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
