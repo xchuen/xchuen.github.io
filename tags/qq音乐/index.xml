@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>QQ音乐 on XChuen&#39;S Blog</title>
+    <link>https://example.com/tags/qq%E9%9F%B3%E4%B9%90/</link>
+    <description>Recent content in QQ音乐 on XChuen&#39;S Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 18 Jun 2020 21:52:28 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/qq%E9%9F%B3%E4%B9%90/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Termux解码QQ音乐QMC加密格式</title>
+      <link>https://example.com/2020/termux%E8%A7%A3%E7%A0%81qq%E9%9F%B3%E4%B9%90qmc%E5%8A%A0%E5%AF%86%E6%A0%BC%E5%BC%8F/</link>
+      <pubDate>Thu, 18 Jun 2020 21:52:28 +0000</pubDate>
+      
+      <guid>https://example.com/2020/termux%E8%A7%A3%E7%A0%81qq%E9%9F%B3%E4%B9%90qmc%E5%8A%A0%E5%AF%86%E6%A0%BC%E5%BC%8F/</guid>
+      <description>准备工作  补全依赖  $ pkg in -y git clang taglib  克隆qmcdump源码  $ git clone https://github.com/MegrezZhu/qmcdump  进入qmcdump目录  $ cd ~/qmcdump/  下载make编译源码  $ pkg install make  编译源码  $ make  移动qmcdump  $ mv -f qmcdump $PREFIX/bin/  给予Termux读取sdcard权限  $ termux-setup-storage 开始工作  进入QQ音乐下载路径  $ cd /storage/emulated/0/qqmusic/song/  转码(支持qmcflac/qmc0/qmc3)  $ qmcdump ./*.qmcflac  删除所有qmcflac音乐格式的文件  $ rm -rf ./*.qmcflac 参考 酷安 Github</description>
+    </item>
+    
+  </channel>
+</rss>
