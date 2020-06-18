@@ -162,33 +162,33 @@
 </code></pre></div><ul>
 <li>下载make编译源码</li>
 </ul>
-<pre><code>$ pkg install make
-</code></pre><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ pkg install make
+</code></pre></div><ul>
 <li>编译源码</li>
 </ul>
-<pre><code>$ make
-</code></pre><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ make
+</code></pre></div><ul>
 <li>移动qmcdump</li>
 </ul>
-<pre><code>$ mv -f qmcdump $PREFIX/bin/
-</code></pre><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ mv -f qmcdump $PREFIX/bin/
+</code></pre></div><ul>
 <li>给予Termux读取sdcard权限</li>
 </ul>
-<pre><code>$ termux-setup-storage
-</code></pre><h3 id="开始工作">开始工作</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ termux-setup-storage
+</code></pre></div><h3 id="开始工作">开始工作</h3>
 <ul>
 <li>进入QQ音乐下载路径</li>
 </ul>
-<pre><code>$ cd /storage/emulated/0/qqmusic/song/
-</code></pre><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd /storage/emulated/0/qqmusic/song/
+</code></pre></div><ul>
 <li>转码(支持qmcflac/qmc0/qmc3)</li>
 </ul>
-<pre><code>$ qmcdump ./*.qmcflac
-</code></pre><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ qmcdump ./*.qmcflac
+</code></pre></div><ul>
 <li>删除所有qmcflac音乐格式的文件</li>
 </ul>
-<pre><code>$ rm -rf ./*.qmcflac
-</code></pre><h3 id="参考">参考</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ rm -rf ./*.qmcflac
+</code></pre></div><h3 id="参考">参考</h3>
 <p><a href="https://www.coolapk.com/feed/12924652?shareKey=OTU0MWU5MTUyOTAxNWVlMzU4OWY~&amp;shareUid=1950170&amp;shareFrom=com.coolapk.market_10.2.1">酷安</a>
 <a href="https://github.com/MegrezZhu/qmcdump">Github</a></p>
 
